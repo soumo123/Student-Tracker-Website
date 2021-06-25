@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="/static/css/style.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verification</title>
+</head>
+<body>
+    <form action='/verification' method='POST'>
+        {% csrf_token %}
+        <!-- <input type='text' name='verified' placeholder='Verification' id='verified'>
+        <center>
+            <h1>Edit and Update the Student Details</h1>
+            <hr/>
+            <form method='POST' action='/update/{{Registration.id}}' enctype="multipart/form-data">
+                {% csrf_token %} -->
+                <center>
+            <table border="1">
+                <tr>
+                    <td>Id</td>
+                    <td><input type ="text" name="id" value="{{Registration.id}}" readonly></td>
+                </tr>
+                <tr>
+                    <td>Full name</td>
+                    <td><input type ="text" name="fullname" value="{{Registration.fullname}}"  readonly></td>
+                </tr>
+                <tr>
+                    <td>Email<td>
+                    <input type ="text"name="email" value="{{Registration.email}}" readonly>
+                </tr>
+                <tr>
+                    <td>Mobile<td>
+                    <input type ="text" name="mobile" value="{{Registration.mobile}}" readonly>
+                </tr>
+                <tr>
+                    <td>Stream<td>
+                    <input type ="text" name="stream" value="{{Registration.stream}}" readonly>
+                </tr>
+                
+                <tr>
+                    <td>Skills<td>
+                    <input type ="text" name="skills" value="{{Registration.skills}}">
+                </tr>
+                <tr>
+                    <td>Experience<td>
+                    <input type ="text" name="experience" value="{{Registration.experience}}" readonly>
+                </tr>
+                <tr>
+                    <td>Graduation<td>
+                    <input type ="text"name="graduation" value="{{Registration.graduation}}" readonly>
+                </tr>
+                <tr>
+                    <td>about<td>
+                    <input type ="text" name="about" value="{{Registration.about}}" readonly>
+                </tr>  
+                <tr>
+                    <td>Image<td>
+                    <input type ="file" name="img" value="{{Registration.img}}" readonly>
+                </tr>
+                <tr>
+                    <td>Verified<td>
+                    <input type ="text" name="verified" value="{{Registration.verified}}">
+                </tr>
+            </table>
+            <input type="submit" value="update"/>  <a href="{% url 'profile2' %} " class="btn btn-info"  role="button">Back To Home Page</a>
+            </form>
+    </form>
+</center>
+</body>
+</html>

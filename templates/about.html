@@ -1,0 +1,330 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>GMIT - About</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+ 
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  </head>
+  <body>
+
+     <div class="wrap">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="bg-wrap">
+              <div class="row">
+                <div class="col-md-6 d-flex align-items-center">
+                  <p class="mb-0 phone pl-md-2">
+                    <span class="fa fa-phone mr-1"></span>Phone:<a href="tel:+91 33 2433-0113" class="mr-2">+91 33 2433-0113,</a><a href="tel:+91 33 2701-7511" class="mr-2">+91 33 2701-7511</a> 
+                    <a href="mailto:admissiongmit@gmail.com"><span class="fa fa-paper-plane mr-1"></span> admissiongmit@gmail.com</a>
+                  </p>
+                </div>
+                <div class="col-md-6 d-flex justify-content-md-end">
+                  <div class="social-media">
+                    <p class="mb-0 d-flex">
+                      <a href="https://www.facebook.com/gargimemorial/" target="_blank" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
+                      <a href="https://www.youtube.com/channel/UCWGr7Dv8wctoJO3DjxffLOg/videos" target="_blank"  class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Youtube</i></span></a>
+                      <a href="https://www.instagram.com/gmitkolkata/" target="_blank" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
+                      
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	    	<a class="navbar-brand" href="index.html"><img src="/static/images/logo.jpg" class="img-fluid w-75"></a>	   
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="fa fa-bars"></span> Menu
+	      </button>
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav m-auto">
+	        	<li class="nav-item"><a href="{% url 'index' %} " class="nav-link">Home</a></li>
+	        	<li class="nav-item active"><a href="about" class="nav-link ">About</a></li>
+	        	<li class="nav-item"><a href="courses" class="nav-link">Courses</a></li> 
+            	<!-- <li class="nav-item"><a href="cases" class="nav-link">Activities</a></li>            -->
+            	<!-- <li class="nav-item"><a href="CDC" class="nav-link">Contact</a></li> -->
+				{% if user.is_authenticated %}
+				<li class="nav-item btn btn-primary rounded-pill"><b class="nav-link">{{user.username}}</b></li>
+				<li class="nav-item"><a href="logout" class="nav-link">Log out</a></li>
+				{% else %}
+				<li class="nav-item"><a href="login" class="nav-link">Login</a></li>
+				{% endif %}
+
+			  	<li class="nav-item"><a href="dashboard" class="nav-link">DashBoard</a></li> 
+			  	<li class="nav-item"><a href="cdclogin" class="nav-link">CDC</a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+
+    <!-- END nav -->
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('/static/images/bg_2.jpg');" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-end">
+          <div class="col-md-9 ftco-animate pb-5">
+          	<p class="breadcrumbs mb-2"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>About us <i class="ion-ios-arrow-forward"></i></span></p>
+            <h1 class="mb-0 bread">About Us</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+   	
+    <section class="ftco-section ftco-no-pt bg-light">
+    	<div class="container">
+    		<div class="row d-flex no-gutters">
+    			<div class="col-md-6 d-flex">
+    				<div class="img img-video d-flex align-self-stretch align-items-center justify-content-center justify-content-md-center mb-4 mb-sm-0" style="background-image:url(/static/images/about.jpg);">
+    				</div>
+    			</div>
+    			<div class="col-md-12">
+    				<div class="heading-section pl-md-4 pt-md-5">
+    					<span class="subheading">WELCOME TO GMIT</span>
+	            <h2 class="mb-4">Our Mission is to Provide a World‑class Education</h2>
+	            <p>Gargi Memorial Institute of Technology (GMIT), an engineering institute in West Bengal was started in 2011 by Mallabhum Human Resource Development Trust (MHRDT) in memory of Lt. Gargi Mukherjee (Banerjee).</p>
+              <p>Barely in its 5th year, GMIT has been ranked 8th amongst all emerging engineering colleges in India because of its educational excellence and professional infrastructural facilities.</p>
+              <p>At GMIT, we always believed that an educational institution is only good for its faculty. That’s why we have gone out of our way to pick top – draw faculty for each of our departments, including former professors of IIT, foreign University, and Jadavpur University. GMIT currently offers courses in five disciplines namely Civil Engineering (CE), Computer Science and Engineering (CSE), Electrical Engineering (EE), Mechanical Engineering (ME) and Electronics and Communication Engineering (ECE). GMIT is approved by All India Council of Technical Education (AICTE) and affiliated to Maulana Abul Kalam Azad University of Technology (MAKAUT), previously known as West Bengal University of Technology (WBUT).</p>
+              <p>The physical design of the campus consisting of landscape, gardens and horizontal architecture blends organically into its surroundings. GMIT has already roped in international collaboration to facilitate in-class real time learning using advanced technology along with exposure to global trends in industries.</p>
+              <p>The Institute is located on the southern fringe of Kolkata, at Baruipur, an upcoming satellite town and caters to students from reputed schools of India.</p>
+    				</div>
+	        </div>
+        </div>
+    	</div>
+    </section>
+
+    <section class="ftco-counter bg-light ftco-no-pt" id="section-counter">
+    	<div class="container">
+				<div class="row">
+          <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
+            <div class="block-18 text-center">
+              <div class="text">
+                <strong class="number" data-number="50">0</strong>
+              </div>
+              <div class="text">
+              	<span>Years of Experienced</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
+            <div class="block-18 text-center">
+              <div class="text">
+                <strong class="number" data-number="8500">0</strong>
+              </div>
+              <div class="text">
+              	<span>Passout Students</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
+            <div class="block-18 text-center">
+              <div class="text">
+                <strong class="number" data-number="20">0</strong>
+              </div>
+              <div class="text">
+              	<span>Awards Won</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
+            <div class="block-18 text-center">
+              <div class="text">
+                <strong class="number" data-number="50">0</strong>
+              </div>
+              <div class="text">
+              	<span>Expert Consultant</span>
+              </div>
+            </div>
+          </div>
+        </div>
+    	</div>
+    </section>
+    <section class="ftco-section testimony-section bg-light">
+    	<div class="overlay"></div>
+      <div class="container">
+        <div class="row justify-content-center pb-5 mb-3">
+          <div class="col-md-7 heading-section heading-section-white text-center ftco-animate">
+          	<span class="subheading">Meet our Teachers</span>
+            <h2>Faculties & HOD's</h2>
+          </div>
+        </div>
+        <div class="row ftco-animate">
+          <div class="col-md-12">
+            <div class="carousel-testimony owl-carousel ftco-owl">
+              <div class="item">
+                <div class="testimony-wrap py-4">
+                	<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
+                  <div class="text">
+                   <!--  <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p> -->
+                    <div class="d-flex align-items-center">
+                    	
+                    	<div class="pl-3">
+		                    <p class="name">ARIT KHAN</p>
+		                    <span class="position">Physics Teacher</span>
+		                  </div>
+	                  </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap py-4">
+                	<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
+                  <div class="text">                    
+                    <div class="d-flex align-items-center">
+                    
+                    	<div class="pl-3">
+		                    <p class="name">DIPAYN DAS</p>
+		                    <span class="position">Assistant Professor</span>
+		                  </div>
+	                  </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap py-4">
+                	<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
+                  <div class="text">
+                   
+                    <div class="d-flex align-items-center">
+                    	
+                    	<div class="pl-3">
+		                    <p class="name">SARAMA DAS</p>
+		                    <span class="position">Basic Science HOD</span>
+		                  </div>
+	                  </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap py-4">
+                	<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
+                  <div class="text">
+                   
+                    <div class="d-flex align-items-center">
+                    	
+                    	<div class="pl-3">
+		                    <p class="name">BIPASA BANARJEE</p>
+		                    <span class="position">HOD Of ECE Dept.</span>
+		                  </div>
+	                  </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap py-4">
+                	<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
+                  <div class="text">
+                                        <div class="d-flex align-items-center">
+                    
+                    	<div class="pl-3">
+		                    <p class="name">PRIYANKA MUKHARJEE</p>
+		                    <span class="position">ECE Lab Assistant
+                        </span>
+		                  </div>
+	                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container-fluid px-lg-5">
+        <div class="row">
+          <div class="col-md-9 py-5">
+            <div class="row">
+              <div class="col-md-4 mb-md-0 mb-4">
+                <h2 class="footer-heading">About us</h2>
+                <p>Gargi Memorial Institute of Technology (GMIT), an engineering institute in West Bengal was started in 2011 by Mallabhum Human Resource Development Trust (MHRDT) in memory of Lt. Gargi Mukherjee (Banerjee).</p>
+                <ul class="ftco-footer-social p-0">
+                  <li class="ftco-animate"><a href="https://www.youtube.com/channel/UCWGr7Dv8wctoJO3DjxffLOg/videos" target="_blank" data-toggle="tooltip" data-placement="top" title="Twitter"><span class="fa fa-youtube"></span></a></li>
+                  <li class="ftco-animate"><a href="https://www.facebook.com/gargimemorial/" data-toggle="tooltip" data-placement="top" title="Facebook"><span class="fa fa-facebook"></span></a></li>
+                  <li class="ftco-animate"><a href="https://www.instagram.com/gmitkolkata/" data-toggle="tooltip" data-placement="top" title="Instagram" target="_blank"><span class="fa fa-instagram"></span></a></li>
+                </ul>
+              </div>
+              <div class="col-md-8">
+                <div class="row justify-content-center">
+                  <div class="col-md-12 col-lg-10">
+                    <div class="row">
+                      <div class="col-md-4 mb-md-0 mb-4">
+                        <h2 class="footer-heading">IMPORTANT LINKS</h2>
+                        <ul class="list-unstyled">
+                          <li><a href="#" class="py-1 d-block">About us</a></li>
+                          <li><a href="#" class="py-1 d-block">Services</a></li>
+                          <li><a href="#" class="py-1 d-block">Contact Us</a></li>
+                        </ul>
+                      </div>
+                      <div class="col-md-8 mb-md-0 mb-4">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3689.3533355205604!2d88.43875281495606!3d22.37803348528325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a026d0097533aed%3A0xe18407a46f2e97f6!2sGargi%20Memorial%20Institute%20of%20Technology!5e0!3m2!1sen!2sin!4v1620460432966!5m2!1sen!2sin" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 py-md-5 py-4 aside-stretch-right pl-lg-5">
+            <h2 class="footer-heading">Free consultation</h2>
+            <form action="#" class="form-consultation">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Your Name">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Your Email">
+              </div>
+              <div class="form-group">
+                <textarea name="" id="" cols="30" rows="3" class="form-control" placeholder="Message"></textarea>
+              </div>
+              <div class="form-group">
+                <button type="submit" class="form-control submit px-3">Send A Message</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+  
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="/static/js/jquery.min.js"></script>
+  <script src="/static/js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="/static/js/popper.min.js"></script>
+  <script src="/static/js/bootstrap.min.js"></script>
+  <script src="/static/js/jquery.easing.1.3.js"></script>
+  <script src="/static/js/jquery.waypoints.min.js"></script>
+  <script src="/static/js/jquery.stellar.min.js"></script>
+  <script src="/static/js/jquery.animateNumber.min.js"></script>
+  <script src="/static/js/owl.carousel.min.js"></script>
+  <script src="/static/js/jquery.magnific-popup.min.js"></script>
+  <script src="/static/js/scrollax.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="/static/js/google-map.js"></script>
+  <script src="/static/js/main.js"></script>
+    
+  </body>
+</html>

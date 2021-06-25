@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Students Details</title>
+</head>
+<body>
+<nav>
+    {% if messages %}
+    {% for updaterecord in messages %}
+    <strong style="color:cadetblue;">{{updaterecord}}</strong>
+
+    {% endfor %}
+    {% endif %}
+
+</nav>
+
+    <center>
+        <h1>Edit and Update the Student Details</h1>
+        <hr/>
+        <form method='POST' action='/update/{{Registration.id}}'>
+            {% csrf_token %}
+        <table border="1">
+            <tr>
+                <td>Id</td>
+                <td><input type ="text" name="id" value="{{Registration.id}}" readonly></td>
+            </tr>
+            <tr>
+                <td>Full name</td>
+                <td><input type ="text" name="fullname" value="{{Registration.fullname}}"></td>
+            </tr>
+            <tr>
+                <td>Email<td>
+                <input type ="text"name="email" value="{{Registration.email}}">
+            </tr>
+            <tr>
+                <td>Mobile<td>
+                <input type ="text" name="mobile" value="{{Registration.mobile}}">
+            </tr>
+            <tr>
+                <td>Stream<td>
+                <input type ="text" name="stream" value="{{Registration.stream}}">
+            </tr>
+            <tr>
+                <td>Skills<td>
+                <input type ="text" name="skills" value="{{Registration.skills}}">
+            </tr>
+            <tr>
+                <td>Experience<td>
+                <input type ="text" name="experience" value="{{Registration.experience}}">
+            </tr>
+            <tr>
+                <td>Graduation<td>
+                <input type ="text"name="graduation" value="{{Registration.graduation}}">
+            </tr>
+            <tr>
+                <td>about<td>
+                <input type ="text" name="about" value="{{Registration.about}}">
+            </tr>  
+            <tr>
+                <td>Image<td>
+                <input type ="file" name="img" value="{{Registration.img}}">
+            </tr>
+            <tr>
+                <td>Verified<td>
+                <input type ="text" name="verified" value="{{Registration.verified}}" readonly>
+            </tr>
+        </table>
+        <input type="submit" value="update"/>  <a href="{% url 'profile2' %} " class="btn btn-info"  role="button">Back To Home Page</a>
+        </form>
+    </center>
+</body>
+</html>

@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link href="/static/css/style.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Register</title>
+</head>
+<body>
+	
+	{% if messages %}
+	{% for message in messages %}
+
+	<div class="alert alert-warning alert-dismissible fade show" role="alert">
+	  <strong>Congratulations!!</strong> YOUR FORM IS SUBMIITED.
+	  <!-- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> -->
+	</div>
+	
+	  <!-- <h2 style="color:brown;">{{message}}</h2> -->
+	{% endfor %}
+	{% endif %}
+			  
+	<section class="testimonial py-5" id="testimonial">
+		<div class="container">
+			<div class="row ">
+				<div class="col-md-4 py-5 bg-primary text-white text-center ">
+					<div class=" ">
+						<div class="card-body">
+							<img src="http://www.ansonika.com/mavia/img/registration_bg.svg" style="width:30%">
+							<h2 class="py-3">Registration</h2>
+							<p><h1> STUDENT REGISTRATION FORM</h1></p>
+		
+						</div>
+					</div>
+				</div>
+				<div class="col-md-8 py-5 border">
+					<h4 class="pb-4">Please fill with your details</h4>
+
+					<form action='register1' method='POST'>
+						{% csrf_token %}
+						<div class="form-row">
+							<div class="form-group col-md-6">
+							  <input id="fullname" name="fullname" placeholder="Full Name" class="form-control" type="text">
+							</div>
+							<div class="form-group col-md-6">
+							  <input type="text" class="form-control" id="email" name="email" placeholder="Email">
+							</div>
+						  </div>
+						<div class="form-row">
+							<div class="form-group col-md-6">
+								<input id="mobile" name="mobile" placeholder="Mobile No." class="form-control" required="required" type="text">
+							</div>
+							<input id="password" name="password" placeholder="password" class="form-control" type="text"></div><br>
+							<div class="form-group col-md-6">
+									  
+										<select id="stream" class="form-control" name="stream" type="text">
+										<option selected>Choose your Stream</option>
+										<option>ECE</option>
+										<option>CSE</option>
+										<option>EE</option>
+										<option>ME</option>
+										<option>CE</option>
+										<option>None</option>
+									  </select>
+							</div>
+							<div class="form-group col-md-12">
+								<input id="skills" name="skills" placeholder="Write Your Skills" class="form-control" type="text"></div><br>
+
+								<div class="form-group col-md-6" placeholder="courses">
+								<select id="experience" class="form-control" name="experience" type="text">
+									<option selected>Enter Your Experience</option>
+									<option>0</option>
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+								  </select>
+							</div>
+							
+							<div class="form-group col-md-6">
+								<select id="graduation" class="form-control" name="graduation">
+									<option selected>Graduation Year</option>
+									<option>1st</option>
+									<option>2nd</option>
+									<option>3rd</option>
+									<option>4th</option>
+									<option>passs out</option>
+								  </select>
+							</div><br>
+
+
+							<div class="form-group col-md-12">
+							<textarea id="about" name="about" cols="40" rows="3" class="form-control" placeholder="Write Something About Yourself" type="text"></textarea>
+						</div>
+						<div class="input-group mb-3">
+							<!-- {{form.media}}
+							{{form.as_p}} -->
+							<input type="file" class="form-control" id="inputGroupFile02" name='img'>
+							<label class="input-group-text" for="inputGroupFile02">Upload</label>
+						  </div>
+						<div class="form-row">
+							<div class="form-group">
+								<div class="form-group">
+									<div class="form-check">
+									  <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+									  <label class="form-check-label" for="invalidCheck2">
+										<small>By clicking Submit, you agree to our Terms & Conditions, Visitor Agreement and Privacy Policy.</small>
+									  </label>
+									</div>
+								  </div>
+						
+							  </div>
+						</div>
+						
+						<div class="form-row">
+							<button type="submit" class="btn btn-danger">Submit</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+</body>
+</html>
+
+
+
+
+
+
+

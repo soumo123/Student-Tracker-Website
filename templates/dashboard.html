@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit and Update Records</title>
+</head>
+<body>
+    <center>
+        <h1>STUDENT DETAILS</h1>
+        <hr/>
+        </center>
+        <table border="1">
+            <tr class="table-primary">
+                <th>Id</th>
+                <th>Full name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Stream</th>
+                <th>Skills</th>
+                <th>Experience</th>
+                <th>Graduation</th>
+                <th>About</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            {% for displaystudent in Registration %}
+            <tr>
+                <td>{{displaystudent.id}}</td>
+                <td>{{displaystudent.fullname}}</td>
+                <td>{{displaystudent.email}}</td>
+                <td>{{displaystudent.mobile}}</td>
+                <td>{{displaystudent.stream}}</td>
+                <td>{{displaystudent.skills}}</td>
+                <td>{{displaystudent.experience}}</td>
+                <td>{{displaystudent.graduation}}</td>
+                <td>{{displaystudent.about}}</td>
+                <!-- <td><img src="{{displaystudent.img.url}}" style='height:auto; width:80px'></td> -->
+                <td><a class="btn btn-primary" href="/edit/{{displaystudent.id}}" role="button">Edit</a></td>
+                <td><a class="btn btn-danger" href="/delete/{{displaystudent.id}}" role="button" onclick="return confirm('Are You Sure Want To Delete The Current Details ??')">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="{% url 'index' %} " class="btn btn-info"  role="button">Back To Home Page</a> | <a href="{% url 'profile2' %} " class="btn btn-info"  role="button">Back To Edit page</a>
+    </center>
+</body>
+</html>
+
+  

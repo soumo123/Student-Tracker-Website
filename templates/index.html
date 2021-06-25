@@ -1,0 +1,409 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>GMIT - Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' %}">
+ 
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" integrity="undefined" crossorigin="anonymous">
+
+
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/duotone.css" integrity="sha384-R3QzTxyukP03CMqKFe0ssp5wUvBPEyy9ZspCB+Y01fEjhMwcXixTyeot+S40+AjZ" crossorigin="anonymous"/>
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/fontawesome.css" integrity="sha384-eHoocPgXsiuZh+Yy6+7DsKAerLXyJmu2Hadh4QYyt+8v86geixVYwFqUvMU8X90l" crossorigin="anonymous"/>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+
+    <div class="wrap">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="bg-wrap">
+							<div class="row">
+								<div class="col-md-6 d-flex align-items-center">
+									<p class="mb-0 phone pl-md-2">
+										<span class="fa fa-phone mr-1"></span>Phone:<a href="tel:+91 33 2433-0113" class="mr-2">+91 33 2433-0113,</a><a href="tel:+91 33 2701-7511" class="mr-2">+91 33 2701-7511</a> 
+										<a href="mailto:admissiongmit@gmail.com"><span class="fa fa-paper-plane mr-1"></span> admissiongmit@gmail.com</a>
+									</p>
+								</div>
+								<div class="col-md-6 d-flex justify-content-md-end">
+									<div class="social-media">
+						    		<p class="mb-0 d-flex">
+						    			<a href="https://www.facebook.com/gargimemorial/" target="_blank" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
+						    			<a href="https://www.youtube.com/channel/UCWGr7Dv8wctoJO3DjxffLOg/videos" target="_blank"  class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Youtube</i></span></a>
+						    			<a href="https://www.instagram.com/gmitkolkata/" target="_blank" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only"></i></span></a>
+						    			
+						    		</p>
+					        </div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav>{% if messages %}
+			{% for message in messages %}
+		  
+			<div class="alert alert-warning alert-dismissible fade show" role="alert">
+			  <strong>Congratulations!!</strong> YOUR ARE SIGN IN
+			</div>
+			
+			{% endfor %}
+			{% endif %}
+
+
+
+
+		</nav>
+		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	    	<a class="navbar-brand" href="index.html"><img src="/static/images/logo.jpg" class="img-fluid w-75"></a>	   
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="fa fa-bars"></span> Menu
+	      </button>
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav m-auto">
+	        	<li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
+	        	<li class="nav-item"><a href="about" class="nav-link">About</a></li>
+	        	<li class="nav-item"><a href="courses" class="nav-link">Courses</a></li> 
+            	<!-- <li class="nav-item"><a href="cases" class="nav-link">Activites</a></li>            -->
+            	<!-- <li class="nav-item"><a href="CDC" class="nav-link">Contact</a></li> -->
+				{% if user.is_authenticated %}
+				<li class="nav-item btn btn-primary rounded-pill"><b class="nav-link">{{user.username}}</b></li>
+				<li class="nav-item"><a href="logout" class="nav-link">Log out</a></li>
+				{% else %}
+				<li class="nav-item"><a href="login" class="nav-link">Login</a></li>
+				{% endif %}
+
+			  	<li class="nav-item"><a href="dashboard" class="nav-link">DashBoard</a></li>
+			  	<li class="nav-item"><a href="cdclogin" class="nav-link">CDC</a></li>			  
+				  {% if obj %} 
+				  <h3>Succesfully uploaded : {{img_obj.caption}}</h3> 
+				  <img src="{{ obj.image.url}}" alt="image" class="img-thumbnail" height="70%" width="70%"> 
+				  {% endif %} 
+
+				  <hr>
+				  {% for x in img %}
+				  <img src="{{x.image.url}}" height="auto" width="20%" class="img-thumbnail" alt="..."> 
+				  <h2 class="text-center" >{{x.caption}}</h2>
+				  {% endfor %}
+
+
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
+    <div class="hero-wrap">
+	    <div class="home-slider owl-carousel">
+	      <div class="slider-item" style="background-image:url(/static/images/bg_1.jpg);">
+	      	<div class="overlay"></div>
+	        <div class="container">
+	          <div class="row no-gutters slider-text align-items-center justify-content-center">
+		          <div class="col-md-8 ftco-animate">
+		          	<div class="text w-100 text-center">
+		          		<h2>Built Better Life Today with</h2>
+			            <h1 class="mb-4"> Gargi Memorial Institute of Technology (GMIT)</h1>
+			            <p><a href="register1" class="btn btn-white">Register</a></p>
+						
+		            </div>
+		          </div>
+		        </div>
+	        </div>
+	      </div>
+
+	      <div class="slider-item" style="background-image:url(/static/images/bg_2.jpg);">
+	      	<div class="overlay"></div>
+	        <div class="container">
+	          <div class="row no-gutters slider-text align-items-center justify-content-center">
+		          <div class="col-md-8 ftco-animate">
+		          	<div class="text w-100 text-center">
+		          		<h2>Learn New Skills with</h2>
+			            <h1 class="mb-4"> Top Educators</h1>
+			            <p><a href="#" class="btn btn-white">Register</a></p>
+		            </div>
+		          </div>
+		        </div>
+	        </div>
+	      </div>
+	    </div>
+	  </div>   	
+    <section class="ftco-section ftco-no-pt bg-light mt-5">
+    	<div class="container">
+    		<div class="row d-flex no-gutters">
+    			<div class="col-md-6 d-flex">
+    				<div class="img img-video d-flex align-self-stretch align-items-center justify-content-center justify-content-md-center mb-4 mb-sm-0" style="background-image:url(/static/images/GMIT3.jpg);">
+    				</div>
+    			</div>
+    			<div class="col-md-6 pl-md-5 py-md-5">
+    				<div class="heading-section pt-md-5">
+    					<span class="subheading">Welcome to GMIT</span>
+	            <h2 class="mb-4">Our Mission is to Provide a World‑class Education.</h2>
+    				</div>
+            <p>Gargi Memorial Institute of Technology (GMIT), an engineering institute in West Bengal was started in 2011 by Mallabhum Human Resource Development Trust (MHRDT) in memory of Lt. Gargi Mukherjee (Banerjee).</p>
+            <p>Barely in its 5th year, GMIT has been ranked 8th amongst all emerging engineering colleges in India because of its educational excellence and professional infrastructural facilities.</p>
+            <p>At GMIT, we always believed that an educational institution is only good for its faculty. That’s why we have gone out of our way to pick top – draw faculty for each of our departments, including former professors of IIT, foreign University, and Jadavpur University. </p>
+            <a href="#" class="btn btn-primary btn-lg px-5 py-3">Know More</a>
+	        </div>
+        </div>
+    	</div>
+    </section>
+    <section class="ftco-counter bg-light ftco-no-pt" id="section-counter">
+    	<div class="container">
+				<div class="row">
+          <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
+            <div class="block-18 text-center">
+              <div class="text">
+                <strong class="number" data-number="10">0</strong>
+              </div>
+              <div class="text">
+              	<span>Years of Experienced</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
+            <div class="block-18 text-center">
+              <div class="text">
+                <strong class="number" data-number="8500">0</strong>
+              </div>
+              <div class="text">
+              	<span>Passout Students</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
+            <div class="block-18 text-center">
+              <div class="text">
+                <strong class="number" data-number="20">0</strong>
+              </div>
+              <div class="text">
+              	<span>Awards Won</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
+            <div class="block-18 text-center">
+              <div class="text">
+                <strong class="number" data-number="50">0</strong>
+              </div>
+              <div class="text">
+              	<span>Expert Consultant</span>
+              </div>
+            </div>
+          </div>
+        </div>-
+    	</div>
+    </section>
+    <section class="ftco-section ftco-no-pt bg-light ftco-faqs">
+    	<div class="container">
+    		<div class="row">
+    			<div class="col-lg-6">
+    				<div class="img-faqs w-100">
+	    				<div class="img mb-4 mb-sm-0" style="background-image:url(/static/images/ramp.jpg);">
+	    				</div>
+	    				<div class="img img-2 mb-4 mb-sm-0" style="background-image:url(/static/images/gmit6.jpg);">
+	    				</div>
+	    			</div>
+    			</div>
+    			<div class="col-lg-6 pl-lg-5">
+    				<div class="heading-section mb-5 mt-5 mt-lg-0">
+    					<span class="subheading">Our Difference</span>
+	            <h2 class="mb-3">A Large Range of Learning Paths to Match Goals</h2>	         
+    				</div>
+    				<div id="accordion" class="myaccordion w-100" aria-multiselectable="true">
+						  <div class="card">
+						    <div class="card-header p-0" id="headingOne">
+						      <h2 class="mb-0">
+						        <button href="#collapseOne" class="d-flex py-3 px-4 align-items-center justify-content-between btn btn-link" data-parent="#accordion" data-toggle="collapse" aria-expanded="true" aria-controls="collapseOne">
+						        	<p class="mb-0">Career Development Cell</p>
+						          <i class="fa" aria-hidden="true"></i>
+						        </button>
+						      </h2>
+						    </div>
+						    <div class="collapse show" id="collapseOne" role="tabpanel" aria-labelledby="headingOne">
+						      <div class="card-body py-3 px-0">
+						      	<p>The Career Development Cell (CDC) is committed to provide all possible assistance to the students of GMIT in their efforts to find employment. Headed by Mr Sudip Mukherjee, Director-CDC & Ex-GM, ArcelorMittal, the cell is an 8-member team, comprising of one faculty member from each department and the Training & Placement Officers (TPOs).The success of CDC is reflected in the students being constantly able to secure lucrative industry placements since the conception of the cell.</p>
+						      </div>
+						    </div>
+						  </div>
+
+						  <div class="card">
+						    <div class="card-header p-0" id="headingTwo" role="tab">
+						      <h2 class="mb-0">
+						        <button href="#collapseTwo" class="d-flex py-3 px-4 align-items-center justify-content-between btn btn-link" data-parent="#accordion" data-toggle="collapse" aria-expanded="false" aria-controls="collapseTwo">
+						        	<p class="mb-0">Innovation Cell & Vibrant Students’ Activities</p>
+						          <i class="fa" aria-hidden="true"></i>
+						        </button>
+						      </h2>
+						    </div>
+						    <div class="collapse" id="collapseTwo" role="tabpanel" aria-labelledby="headingTwo">
+						      <div class="card-body py-3 px-0">
+						      	<p>The Institute setup an Innovation Cell for providing various facilities to the students to nurture their innovative ideas and convert them to usable products. The students are encouraged to participate in various technical competitions such as AICTE Chatra Viswakarma, Tech Fests organized by various IITs viz. IIT Mumbai, IIT Kharagpur, etc. and also participate in regional Project Contest organized by CII (ER), American Centre, Kolkata,etc.</p>
+						      </div>
+						    </div>
+						  </div>
+
+						  <div class="card">
+						    <div class="card-header p-0" id="headingThree" role="tab">
+						      <h2 class="mb-0">
+						        <button href="#collapseThree" class="d-flex py-3 px-4 align-items-center justify-content-between btn btn-link" data-parent="#accordion" data-toggle="collapse" aria-expanded="false" aria-controls="collapseThree">
+						        	<p class="mb-0">Industry-Academia Collaboration</p>
+						          <i class="fa" aria-hidden="true"></i>
+						        </button>
+						      </h2>
+						    </div>
+						    <div class="collapse" id="collapseThree" role="tabpanel" aria-labelledby="headingTwo">
+						      <div class="card-body py-3 px-0">
+						      	<p>Sticking to its core working principle of a strong industry connect, CDC has been successful in establishing and maintaining various industry collaborations through MoUs, industry meets, joint events with the industry, exchange and implementations of projects and various other R&D activities etc. Such collaborations not only help both academia and industry work closely in tandem, but also benefit the students immensely in rendering them “industry ready” through direct engagement and platform sharing with the industry.</p>
+						      </div>
+						    </div>
+						  </div>
+
+						  <div class="card">
+						    <div class="card-header p-0" id="headingFour" role="tab">
+						      <h2 class="mb-0">
+						        <button href="#collapseFour" class="d-flex py-3 px-4 align-items-center justify-content-between btn btn-link" data-parent="#accordion" data-toggle="collapse" aria-expanded="false" aria-controls="collapseFour">
+						        	<p class="mb-0">GMIT Placement Cell</p>
+						          <i class="fa" aria-hidden="true"></i>
+						        </button>
+						      </h2>
+						    </div>
+						    <div class="collapse" id="collapseFour" role="tabpanel" aria-labelledby="headingTwo">
+						      <div class="card-body py-3 px-0">
+						      	<p>Positive attitude of our students towards placement opportunities has put GMIT on the map of West Bengal as a fruitful destination for the core industries to recruit fresh engineers. While the number of jobs in core sector shrinks day by day, GMIT has consistently secured decent number of opportunities for its students. Our students have also successfully secured job opportunities in top IT companies such as TCS, Wipro, Infosys, IBM, Indusnet etc.</p>
+						      </div>
+						    </div>
+						  </div>
+						</div>
+	        </div>
+        </div>
+    	</div>
+    </section>
+    <section class="ftco-section ftco-no-pb ftco-no-pt bg-secondary">
+    
+      <div class="container py-5">
+        <div class="row">
+        <marquee behavior="scroll" direction="left">
+          <!-- {% for dests in dests %} -->
+          <!-- <img src="{{dests.img.url}}" width="120" height="80" alt="" />{% endfor %} -->
+          <img src="/static/images/ibm.png" width="120" height="80" alt="">
+          <img src="/static/images/bsnl.png" width="120" height="80" alt="">
+          <img src="/static/images/capg.png" width="120" height="80" alt="">
+          <img src="/static/images/video.jpg" width="120" height="80" alt="">
+          <img src="/static/images/bheel.jpg" width="120" height="80" alt="">
+          <img src="/static/images/cesc.png" width="120" height="80" alt="">
+          <img src="/static/images/amazon.jpg" width="120" height="80" alt="">
+          <img src="/static/images/oil.png" width="120" height="80" alt="">
+          <img src="/static/images/telcom.png" width="120" height="80" alt="">
+          <img src="/static/images/nass.jpg" width="120" height="80" alt="">
+          <img src="/static/images/zycus.png" width="120" height="80" alt="">
+          <img src="/static/images/calsoft.png" width="120" height="80" alt="">
+          <img src="/static/images/just.jpg" width="120" height="80" alt="">
+          <img src="/static/images/genpact.png" width="120" height="80" alt="">
+          <img src="/static/images/rivigo.png" width="120" height="80" alt="">
+          <img src="/static/images/keventer.jpg" width="120" height="80" alt="">
+          <img src="/static/images/gpt.png width=" width="120" height="80" alt="">
+          <img src="/static/images/shrachi.png" width="120" height="80" alt="">
+        </marquee>
+          <div class="col-md-7 d-flex align-items-center">
+            <h2 class="mb-3 mb-sm-0" style="color:black; font-size: 22px;"></h2>
+          </div>
+          
+          </div>
+        </div>
+      
+    </section>
+    <footer class="footer">
+			<div class="container-fluid px-lg-5">
+				<div class="row">
+					<div class="col-md-9 py-5">
+						<div class="row">
+							<div class="col-md-4 mb-md-0 mb-4">
+								<h2 class="footer-heading">About us</h2>
+								<p>Gargi Memorial Institute of Technology (GMIT), an engineering institute in West Bengal was started in 2011 by Mallabhum Human Resource Development Trust (MHRDT) in memory of Lt. Gargi Mukherjee (Banerjee).</p>
+								<ul class="ftco-footer-social p-0">
+		              <li class="ftco-animate"><a href="https://www.youtube.com/channel/UCWGr7Dv8wctoJO3DjxffLOg/videos" target="_blank" data-toggle="tooltip" data-placement="top" title="Twitter"><span class="fa fa-youtube"></span></a></li>
+		              <li class="ftco-animate"><a href="https://www.facebook.com/gargimemorial/" data-toggle="tooltip" data-placement="top" title="Facebook"><span class="fa fa-facebook"></span></a></li>
+		              <li class="ftco-animate"><a href="https://www.instagram.com/gmitkolkata/" data-toggle="tooltip" data-placement="top" title="Instagram" target="_blank"><span class="fa fa-instagram"></span></a></li>
+		            </ul>
+							</div>
+							<div class="col-md-8">
+								<div class="row justify-content-center">
+									<div class="col-md-12 col-lg-10">
+										<div class="row">
+											<div class="col-md-4 mb-md-0 mb-4">
+												<h2 class="footer-heading">IMPORTANT LINKS</h2>
+												<ul class="list-unstyled">
+						              <li><a href="#" class="py-1 d-block">About us</a></li>
+                          <li><a href="#" class="py-1 d-block">Services</a></li>
+                          <li><a href="#" class="py-1 d-block">Contact Us</a></li>
+						            </ul>
+											</div>
+											<div class="col-md-8 mb-md-0 mb-4">
+												<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3689.3533355205604!2d88.43875281495606!3d22.37803348528325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a026d0097533aed%3A0xe18407a46f2e97f6!2sGargi%20Memorial%20Institute%20of%20Technology!5e0!3m2!1sen!2sin!4v1620460432966!5m2!1sen!2sin" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 py-md-5 py-4 aside-stretch-right pl-lg-5">
+						<h2 class="footer-heading">Free consultation</h2>
+						<form action="#" class="form-consultation">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Your Name">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Your Email">
+              </div>
+              <div class="form-group">
+                <textarea name="" id="" cols="30" rows="3" class="form-control" placeholder="Message"></textarea>
+              </div>
+              <div class="form-group">
+              	<button type="submit" class="form-control submit px-3">Send A Message</button>
+              </div>
+            </form>
+					</div>
+				</div>
+			</div>
+		</footer>
+    
+  
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="/static/js/jquery.min.js"></script>
+  <script src="/static/js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="/static/js/popper.min.js"></script>
+  <script src="/static/js/bootstrap.min.js"></script>
+  <script src="/static/js/jquery.easing.1.3.js"></script>
+  <script src="/static/js/jquery.waypoints.min.js"></script>
+  <script src="/static/js/jquery.stellar.min.js"></script>
+  <script src="/static/js/jquery.animateNumber.min.js"></script>
+  <script src="/static/js/owl.carousel.min.js"></script>
+  <script src="/static/js/jquery.magnific-popup.min.js"></script>
+  <script src="js/scrollax.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="/static/js/google-map.js"></script>
+  <script src="/static/js/main.js"></script>
+    
+  </body>
+</html>
